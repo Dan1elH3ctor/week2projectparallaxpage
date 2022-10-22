@@ -37,4 +37,70 @@ a:hover {
     font-size: 30px;
     border: solid white;
 }
-/* content */
+/* flip-cards */
+.flipcards {
+    background-color: darkgray;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 300px;
+    perspective: 1000px;
+  }
+  .sword {
+    width:300px;
+    height:300px;
+  }
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+  
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  .flip-card-front {
+    background-color: #bbb;
+    color: black;
+  }
+  
+  .flip-card-back {
+    background-color: crimson;
+    color: white;
+    transform: rotateY(180deg);
+  }
+  /* aside display */
+  .Brief {
+    background-color: crimson;
+    width: 100%;
+  }
+  .Brief img {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    animation: swordmove 5s linear infinite;
+    animation-direction: alternate;
+  }
+  @keyframes swordmove {
+    from {left: 0px;}
+    to {left: 1400px;}
+    from {transform: rotate(0deg);}
+    to {transform: rotate(359deg);}
+  }
